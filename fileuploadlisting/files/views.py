@@ -10,6 +10,5 @@ def index(request):
 
 def index(request):
     file_list = File.objects.all()
-    print(file_list)
     context = {'file_list': file_list}
     return render(request, 'files/index.html', context)
