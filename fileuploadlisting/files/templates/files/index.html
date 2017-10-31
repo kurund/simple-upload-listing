@@ -1,9 +1,46 @@
-{% if file_list %}
-    <ul>
-    {% for file in file_list %}
-        <li><a href="{{file.file}}" title="{{file.title}}">{{file.title}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No files are available.</p>
-{% endif %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Hope</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'files/style.css' %}" />
+</head>
+
+<body class="chapters files">
+<div id="container">
+    <div id="header" class="header">
+        <div class="header_content">
+            <div class="header_title">
+                <div class="default"><a href="home.html">Home</a></div>
+                |
+                <div class="active"><a href="">File</a></div>
+            </div>
+        </div>
+
+        <div class="header_logo">
+            <a href="home.html">
+                <div class="logo"><img src="{% static 'files/thumbnails/logo.png' %}" alt="logo"/></div>
+                <div class="logo-mob"><img src="{% static 'files/thumbnails/logo-sm.png' %}" alt="logo"/></div>
+                <div class="site-title">HOPE</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="std-wrap">
+        {% if file_list %}
+        <ul>
+            {% for file in file_list %}
+            <li><a href="{{file.file}}" title="{{file.title}}">{{file.title}}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No files are available.</p>
+        {% endif %}
+
+    </div>
+</div>
+</body>
+</html>
+
