@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>Hope</title>
     <link rel="stylesheet" type="text/css" href="{% static 'files/style.css' %}" />
+
+<style>
+.std-wrap { min-height: 600px;}
+.std-wrap ul { color: #fff; font-family: open sans; font-size: 17px; text-align: left; margin-left:4%; }
+.file_title {
+  border-bottom: 1px solid #000;
+  border-color: #fff;
+  color: #fff;
+  font-family: open sans;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 4%;
+  padding-bottom: 9px;
+  text-align: left;
+  width: 92%;
+}
+.std-wrap a:hover{color:#fff;}
+
+</style>
 </head>
 
 <body class="chapters files">
@@ -15,7 +35,7 @@
             <div class="header_title">
                 <div class="default"><a href="http://home.com/home.html">Home</a></div>
                 |
-                <div class="active"><a href="">File</a></div>
+                <div class="active"><a href="#">File</a></div>
             </div>
         </div>
 
@@ -29,6 +49,7 @@
     </div>
 
     <div class="std-wrap">
+        <div class="file_title"> My Files </div>
         {% if file_list %}
         <ul>
             {% for file in file_list %}
